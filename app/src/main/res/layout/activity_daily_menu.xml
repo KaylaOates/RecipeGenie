@@ -4,14 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EBE8E3"
     tools:context=".DailyMenu">
 
     <TextView
         android:id="@+id/DailyMenuPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="90dp"
+        android:fontFamily="@font/Kollektif"
         android:text="Daily Menu Page"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,9 +25,17 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="320dp"
+        android:layout_marginBottom="670dp"
+        android:backgroundTint="#D5C2B6"
+        android:fontFamily="@font/Kollektif"
         android:onClick="onBackPressed"
         android:text="Back"
         android:textSize="10sp"
+        app:cornerRadius="6sp"
+        app:iconTint="#EB742C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,21 +55,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="Breakfast" />
+            android:backgroundTint="#EC742C"
+            android:fontFamily="@font/Kollektif"
+            android:text="Breakfast"
+            android:textColor="#FCCCA4"
+            app:cornerRadius="6sp" />
 
         <Button
             android:id="@+id/Lunch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="Lunch" />
+            android:backgroundTint="#EC742C"
+            android:fontFamily="@font/Kollektif"
+            android:text="Lunch"
+            android:textColor="#FCCCA4"
+            app:cornerRadius="6sp" />
 
         <Button
             android:id="@+id/Dinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="Dinner" />
+            android:backgroundTint="#EC742C"
+            android:fontFamily="@font/Kollektif"
+            android:text="Dinner"
+            android:textColor="#FCCCA4"
+            app:cornerRadius="6sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

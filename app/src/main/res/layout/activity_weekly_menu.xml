@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EBE8E3"
     tools:context=".WeeklyMenu">
 
     <TextView
@@ -11,7 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:fontFamily="@font/Kollektif"
         android:text="Weekly Menu Page"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="100dp"
         android:orientation="vertical"
@@ -35,7 +38,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_marginTop="10dp"
-            android:text="Sunday" />
+            android:backgroundTint="#EC742C"
+            android:fontFamily="@font/Kollektif"
+            android:text="Sunday"
+            app:cornerRadius="6sp" />
 
         <Button
             android:id="@+id/Monday"
@@ -43,7 +49,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_marginTop="10dp"
-            android:text="Monday" />
+            android:backgroundTint="#EC742C"
+            android:fontFamily="@font/Kollektif"
+            android:text="Monday"
+            app:cornerRadius="6sp" />
 
         <Button
             android:id="@+id/Tuesday"
@@ -51,7 +60,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_marginTop="150dp"
-            android:text="Tuesday" />
+            android:backgroundTint="#EC742C"
+            android:fontFamily="@font/Kollektif"
+            android:text="Tuesday"
+            app:cornerRadius="6sp" />
 
         <Button
             android:id="@+id/Wednesday"
@@ -59,7 +71,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_marginTop="200dp"
-            android:text="Wednesday" />
+            android:backgroundTint="#EC742C"
+            android:fontFamily="@font/Kollektif"
+            android:text="Wednesday"
+            app:cornerRadius="6sp" />
 
         <Button
             android:id="@+id/Thursday"
@@ -68,7 +83,10 @@
             android:layout_margin="10dp"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="250dp"
-            android:text="Thursday" />
+            android:backgroundTint="#EC742C"
+            android:fontFamily="@font/Kollektif"
+            android:text="Thursday"
+            app:cornerRadius="6sp" />
 
         <Button
             android:id="@+id/Friday"
@@ -76,7 +94,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_marginTop="300dp"
-            android:text="Friday" />
+            android:backgroundTint="#EC742C"
+            android:fontFamily="@font/Kollektif"
+            android:text="Friday"
+            app:cornerRadius="6sp" />
 
         <Button
             android:id="@+id/Saturday"
@@ -84,7 +105,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_marginTop="350dp"
-            android:text="Satruday" />
+            android:backgroundTint="#EC742C"
+            android:fontFamily="@font/Kollektif"
+            android:text="Satruday"
+            app:cornerRadius="6sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

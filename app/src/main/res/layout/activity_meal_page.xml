@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EBE8E3"
     tools:context=".MealPage">
 
     <Button
@@ -12,9 +13,11 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:backgroundTint="#D5C2B6"
         android:onClick="onBackPressed"
         android:text="Back"
         android:textSize="10sp"
+        app:cornerRadius="6sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,8 +25,10 @@
         android:id="@+id/MealPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Meal Page"
+        android:layout_marginTop="90dp"
+        android:fontFamily="@font/Kollektif"
+        android:text="Meal Information"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
