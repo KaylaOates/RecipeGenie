@@ -2,7 +2,9 @@ package com.example.recipegenie;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,7 +14,7 @@ public class LoadingPage extends AppCompatActivity {
     private EditText chatInput;
     private TextView chatResponse;
     private Button sendButton;
-    private final String openAiKey = "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"; // Replace with your actual OpenAI API key
+    private final String openAiKey = "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"; // Replace with your actual OpenAI API key
     //my key: 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
 
     @Override
@@ -30,6 +32,16 @@ public class LoadingPage extends AppCompatActivity {
             }
             else {
                 chatResponse.setText("Please enter a prompt.");
+            }
+        });
+
+        Button buttonNext = findViewById(R.id.ContinueToWeeklyMenu);
+        buttonNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Handle button click
+                Intent intent = new Intent(LoadingPage.this, WeeklyMenu.class);
+                startActivity(intent);
             }
         });
     }
