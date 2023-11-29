@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:fontFamily="@font/Kollektif"
+        android:fontFamily="@font/kollektif"
         android:text="Weekly Menu Page"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +39,7 @@
             android:layout_margin="10dp"
             android:layout_marginTop="10dp"
             android:backgroundTint="#EC742C"
-            android:fontFamily="@font/Kollektif"
+            android:fontFamily="@font/kollektif"
             android:text="Sunday"
             app:cornerRadius="6sp" />
 
@@ -50,7 +50,7 @@
             android:layout_margin="10dp"
             android:layout_marginTop="10dp"
             android:backgroundTint="#EC742C"
-            android:fontFamily="@font/Kollektif"
+            android:fontFamily="@font/kollektif"
             android:text="Monday"
             app:cornerRadius="6sp" />
 
@@ -61,7 +61,7 @@
             android:layout_margin="10dp"
             android:layout_marginTop="150dp"
             android:backgroundTint="#EC742C"
-            android:fontFamily="@font/Kollektif"
+            android:fontFamily="@font/kollektif"
             android:text="Tuesday"
             app:cornerRadius="6sp" />
 
@@ -72,7 +72,7 @@
             android:layout_margin="10dp"
             android:layout_marginTop="200dp"
             android:backgroundTint="#EC742C"
-            android:fontFamily="@font/Kollektif"
+            android:fontFamily="@font/kollektif"
             android:text="Wednesday"
             app:cornerRadius="6sp" />
 
@@ -84,7 +84,7 @@
             android:layout_marginLeft="0dp"
             android:layout_marginTop="250dp"
             android:backgroundTint="#EC742C"
-            android:fontFamily="@font/Kollektif"
+            android:fontFamily="@font/kollektif"
             android:text="Thursday"
             app:cornerRadius="6sp" />
 
@@ -95,7 +95,7 @@
             android:layout_margin="10dp"
             android:layout_marginTop="300dp"
             android:backgroundTint="#EC742C"
-            android:fontFamily="@font/Kollektif"
+            android:fontFamily="@font/kollektif"
             android:text="Friday"
             app:cornerRadius="6sp" />
 
@@ -106,7 +106,7 @@
             android:layout_margin="10dp"
             android:layout_marginTop="350dp"
             android:backgroundTint="#EC742C"
-            android:fontFamily="@font/Kollektif"
+            android:fontFamily="@font/kollektif"
             android:text="Satruday"
             app:cornerRadius="6sp" />
     </LinearLayout>
