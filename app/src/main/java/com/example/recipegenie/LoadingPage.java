@@ -14,7 +14,7 @@ public class LoadingPage extends AppCompatActivity {
     private EditText chatInput;
     private TextView chatResponse;
     private Button sendButton;
-    private final String openAiKey = "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"; // Replace with your actual OpenAI API key
+    private final String openAiKey = "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"; // Replace with your actual OpenAI API key
     //my key: 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
 
     @Override
