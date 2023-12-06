@@ -19,6 +19,8 @@ public class LoadingPage extends AppCompatActivity {
     private Button sendButton;
     private ProgressBar progressBar;
 
+    //add chat gpt key here
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,26 +31,26 @@ public class LoadingPage extends AppCompatActivity {
         sendButton = findViewById(R.id.generateButton);
         progressBar = findViewById(R.id.progressBar);
 
+        // Disable the ContinueToWeeklyMenu button initially
+        Button buttonNext = findViewById(R.id.ContinueToWeeklyMenu);
+        buttonNext.setEnabled(false);
+        buttonNext.setAlpha(0.25f);
+
         sendButton.setOnClickListener(v -> {
             String prompt = chatInput.getText().toString();
             if (!prompt.isEmpty()) {
-                // Show ProgressBar when the generate button is pressed
                 progressBar.setVisibility(View.VISIBLE);
-
-                // Pass the chatResponse TextView to the ChatGptTask
-                new ChatGptTask(chatResponse, openAiKey, progressBar).execute(prompt);
-            }
-            else {
+                new ChatGptTask(chatResponse, openAiKey, progressBar, buttonNext).execute(prompt);
+            } else {
                 chatResponse.setText("Please enter a prompt.");
             }
         });
 
-        Button buttonNext = findViewById(R.id.ContinueToWeeklyMenu);
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Handle button click
-                Intent intent = new Intent(LoadingPage.this, WeeklyMenu.class);
+                Intent intent = new Intent(LoadingPage.this, DailyMenu.class);
                 startActivity(intent);
             }
         });

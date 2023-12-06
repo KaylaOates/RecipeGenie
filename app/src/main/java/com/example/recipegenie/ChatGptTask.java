@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -21,11 +22,13 @@ public class ChatGptTask extends AsyncTask<String, Void, String> {
     private String breakfast = null;
     private String lunch = null;
     private String dinner = null;
+    private final Button continueButton;
 
-    public ChatGptTask(TextView responseTextView, String apiKey, ProgressBar progressBar) {
+    public ChatGptTask(TextView responseTextView, String apiKey, ProgressBar progressBar, Button continueButton) {
         this.responseTextView = responseTextView;
         this.apiKey = apiKey;
         this.progressBar = progressBar;
+        this.continueButton = continueButton; // Initialize button reference
     }
 
     @Override
@@ -96,20 +99,20 @@ public class ChatGptTask extends AsyncTask<String, Void, String> {
         // Update UI with the result on the main thread
         if (result != null && !result.isEmpty()) {
             responseTextView.setText(result);
-
-            // Hide the progress bar after the task is complete
             progressBar.setVisibility(View.GONE);
-
-
             saveMealPlanToPrefs(result);
-        }
-        else {
-            responseTextView.setText("Error retrieving response, please try again.");
 
-            // Hide the progress bar in case of an error
+            // Enable the ContinueToWeeklyMenu button
+            continueButton.setEnabled(true);
+            continueButton.setAlpha(1f);
+
+        } else {
+            responseTextView.setText("Error retrieving response, please try again.");
             progressBar.setVisibility(View.GONE);
         }
     }
+
+
     private void saveMealPlanToPrefs(String mealPlan) {
         // Use SharedPreferences to save the meal plan
         SharedPreferences preferences = responseTextView.getContext().getSharedPreferences("MealPlanPrefs", Context.MODE_PRIVATE);
