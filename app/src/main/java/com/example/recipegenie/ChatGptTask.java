@@ -1,6 +1,11 @@
 package com.example.recipegenie;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.theokanning.openai.completion.chat.ChatCompletionRequest;
@@ -12,16 +17,26 @@ import java.util.Arrays;
 public class ChatGptTask extends AsyncTask<String, Void, String> {
     private final TextView responseTextView;
     private final String apiKey;
-    public ChatGptTask(TextView responseTextView, String apiKey) {
+    private final ProgressBar progressBar;
+    private String breakfast = null;
+    private String lunch = null;
+    private String dinner = null;
+
+    public ChatGptTask(TextView responseTextView, String apiKey, ProgressBar progressBar) {
         this.responseTextView = responseTextView;
         this.apiKey = apiKey;
+        this.progressBar = progressBar;
     }
+
     @Override
     protected String doInBackground(String... strings) {
-        // Initialize the OpenAI service with the API key
+        // Initializse the OpenAI service with the API key
         OpenAiService service = new OpenAiService(apiKey);
 
-        String modifiedPrompt = "You are a friendly and intelligent nutritional wellness coach communicating with a human. Try to respond in a way that a health advisor would, using understandable language. Generate three healthy meal ideas for the day, including breakfast, lunch, and dinner. Keep all the answers very short\n\n" + "User: " + strings[0];
+        String modifiedPrompt = "You are a friendly and intelligent nutritional wellness coach communicating with a human. "
+                + "Try to respond in a way that a health advisor would, using understandable language. "
+                + "Generate three healthy meal ideas for the day, including breakfast, lunch, and dinner. Keep all the answers very short\n\n"
+                + "User: " + strings[0];
         //Take into consideration the user's dietary preferences, allergies, and nutritional needs: " + userInput + ".
 
         // Create a chat completion request with the appropriate model
@@ -49,11 +64,6 @@ public class ChatGptTask extends AsyncTask<String, Void, String> {
 
         // Split the response into lines
         String[] lines = response.split("\n");
-
-        // Initialize variables to store meal information
-        String breakfast = null;
-        String lunch = null;
-        String dinner = null;
 
         // Iterate through each line and categorize the meal
         for (String line : lines) {
@@ -86,8 +96,25 @@ public class ChatGptTask extends AsyncTask<String, Void, String> {
         // Update UI with the result on the main thread
         if (result != null && !result.isEmpty()) {
             responseTextView.setText(result);
-        } else {
-            responseTextView.setText("Error retrieving response, please try again.");
+
+            // Hide the progress bar after the task is complete
+            progressBar.setVisibility(View.GONE);
+
+
+            saveMealPlanToPrefs(result);
         }
+        else {
+            responseTextView.setText("Error retrieving response, please try again.");
+
+            // Hide the progress bar in case of an error
+            progressBar.setVisibility(View.GONE);
+        }
+    }
+    private void saveMealPlanToPrefs(String mealPlan) {
+        // Use SharedPreferences to save the meal plan
+        SharedPreferences preferences = responseTextView.getContext().getSharedPreferences("MealPlanPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("mealPlan", mealPlan);
+        editor.apply();
     }
 }
