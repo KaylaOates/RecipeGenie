@@ -42,6 +42,19 @@
         app:layout_constraintTop_toBottomOf="@+id/generateButton" />
 
     <Button
+        android:id="@+id/recognitionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:backgroundTint="#00FFFFFF"
+        android:fontFamily="@font/kollektif"
+        android:text="Speech Recognition"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/generateButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

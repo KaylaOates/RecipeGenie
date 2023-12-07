@@ -24,6 +24,7 @@ public class ChatGptTask extends AsyncTask<String, Void, String> {
     private String dinner = null;
     private final Button continueButton;
 
+
     public ChatGptTask(TextView responseTextView, String apiKey, ProgressBar progressBar, Button continueButton) {
         this.responseTextView = responseTextView;
         this.apiKey = apiKey;
@@ -35,6 +36,8 @@ public class ChatGptTask extends AsyncTask<String, Void, String> {
     protected String doInBackground(String... strings) {
         // Initializse the OpenAI service with the API key
         OpenAiService service = new OpenAiService(apiKey);
+
+
 
         String modifiedPrompt = "You are a friendly and intelligent nutritional wellness coach communicating with a human. "
                 + "Try to respond in a way that a health advisor would, using understandable language. "
@@ -111,6 +114,10 @@ public class ChatGptTask extends AsyncTask<String, Void, String> {
             progressBar.setVisibility(View.GONE);
         }
     }
+
+
+
+
 
 
     private void saveMealPlanToPrefs(String mealPlan) {

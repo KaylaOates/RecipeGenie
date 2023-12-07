@@ -17,6 +17,7 @@ public class LoadingPage extends AppCompatActivity {
     private EditText chatInput;
     private TextView chatResponse;
     private Button sendButton;
+    private Button recognitionButton;
     private ProgressBar progressBar;
 
     //add chat gpt key here
@@ -30,6 +31,7 @@ public class LoadingPage extends AppCompatActivity {
         chatResponse = findViewById(R.id.chatOutput);
         sendButton = findViewById(R.id.generateButton);
         progressBar = findViewById(R.id.progressBar);
+        recognitionButton = findViewById(R.id.recognitionButton);
 
         // Disable the ContinueToWeeklyMenu button initially
         Button buttonNext = findViewById(R.id.ContinueToWeeklyMenu);
@@ -43,6 +45,15 @@ public class LoadingPage extends AppCompatActivity {
                 new ChatGptTask(chatResponse, openAiKey, progressBar, buttonNext).execute(prompt);
             } else {
                 chatResponse.setText("Please enter a prompt.");
+            }
+        });
+
+        recognitionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Handle button click
+                Intent intent = new Intent(LoadingPage.this,SpeechRecognitionActivity.class);
+                startActivity(intent);
             }
         });
 
