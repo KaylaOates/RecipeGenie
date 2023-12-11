@@ -21,6 +21,7 @@ public class LoadingPage extends AppCompatActivity {
     private ProgressBar progressBar;
 
     //add chat gpt key here
+    private final String openAiKey = "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";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,7 @@ public class LoadingPage extends AppCompatActivity {
             if (!prompt.isEmpty()) {
                 progressBar.setVisibility(View.VISIBLE);
                 new ChatGptTask(chatResponse, openAiKey, progressBar, buttonNext).execute(prompt);
+                recognitionButton.setText("");
             } else {
                 chatResponse.setText("Please enter a prompt.");
             }
@@ -53,7 +55,9 @@ public class LoadingPage extends AppCompatActivity {
             public void onClick(View view) {
                 // Handle button click
                 Intent intent = new Intent(LoadingPage.this,SpeechRecognitionActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, 1);
+                // chatInput = ""
+                // reset chatInput to whatever is coming from the speech activity
             }
         });
 
@@ -65,5 +69,18 @@ public class LoadingPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            if (data != null) {
+                String userSpeech = data.getStringExtra("userSpeech");
+                chatInput.setText(userSpeech);
+            }
+        }
     }
 }
