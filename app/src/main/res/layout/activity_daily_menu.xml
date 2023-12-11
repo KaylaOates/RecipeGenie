@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="#EBE8E3"
     tools:context=".DailyMenu">
 
@@ -42,7 +42,8 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="200dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,25 +88,18 @@
             android:textSize="25dp"
             app:cornerRadius="0sp"
             app:iconPadding="1dp" />
+
+        <Button
+            android:id="@+id/groceryStores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="60sp"
+            android:backgroundTint="#EC742C"
+            android:fontFamily="@font/kollektif"
+            android:text="Find grocery stores near me!"
+            app:cornerRadius="6sp" />
+
     </LinearLayout>
-
-    <Button
-        android:id="@+id/groceryStores"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="200dp"
-        android:backgroundTint="#EC742C"
-        android:text="Find grocery stores near me!"
-        app:cornerRadius="6sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -220,6 +220,10 @@ public class GroceryStores extends AppCompatActivity {
         }
     }
 
+    public void onBackPressed(View view){
+        finish();
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
