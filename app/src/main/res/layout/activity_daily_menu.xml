@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#EBE8E3"
     tools:context=".DailyMenu">
 
@@ -12,8 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp"
-        android:fontFamily="@font/kollektif"
-        android:text="Daily Menu Page"
+        android:fontFamily="@font/kollektifbold"
+        android:text="Your Daily Menu"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,27 +23,26 @@
         android:id="@+id/BackToWeeklyMenu"
         android:layout_width="75dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="320dp"
         android:layout_marginBottom="670dp"
-        android:backgroundTint="#D5C2B6"
+        android:backgroundTint="#00D5C2B6"
         android:fontFamily="@font/kollektif"
         android:onClick="onBackPressed"
-        android:text="Back"
         android:textSize="10sp"
         app:cornerRadius="6sp"
-        app:iconTint="#EB742C"
+        app:icon="?attr/actionModeCloseDrawable"
+        app:iconSize="25dp"
+        app:iconTint="#49454F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,35 +52,60 @@
         <Button
             android:id="@+id/Breakfast"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:backgroundTint="#EC742C"
+            android:layout_height="100dp"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="#D4C1B5"
             android:fontFamily="@font/kollektif"
             android:text="Breakfast"
-            android:textColor="#FCCCA4"
-            app:cornerRadius="6sp" />
+            android:textColor="#FFF3E9"
+            android:textSize="25dp"
+            app:cornerRadius="0sp"
+            app:iconPadding="1dp" />
 
         <Button
             android:id="@+id/Lunch"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:backgroundTint="#EC742C"
+            android:layout_height="100dp"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="#D3C0B4"
             android:fontFamily="@font/kollektif"
             android:text="Lunch"
-            android:textColor="#FCCCA4"
-            app:cornerRadius="6sp" />
+            android:textColor="#FFF3E9"
+            android:textSize="25dp"
+            app:cornerRadius="0sp"
+            app:iconPadding="1dp" />
 
         <Button
             android:id="@+id/Dinner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:backgroundTint="#EC742C"
+            android:layout_height="100dp"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="#D2BFB3"
             android:fontFamily="@font/kollektif"
             android:text="Dinner"
-            android:textColor="#FCCCA4"
-            app:cornerRadius="6sp" />
+            android:textColor="#FFF3E9"
+            android:textSize="25dp"
+            app:cornerRadius="0sp"
+            app:iconPadding="1dp" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/groceryStores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="200dp"
+        android:backgroundTint="#EC742C"
+        android:text="Find grocery stores near me!"
+        app:cornerRadius="6sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

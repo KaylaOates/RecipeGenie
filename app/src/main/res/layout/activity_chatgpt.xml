@@ -14,7 +14,6 @@
         android:layout_marginStart="64dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="64dp"
-        android:layout_marginBottom="8dp"
         android:ems="10"
         android:fontFamily="@font/kollektif"
         android:hint="Enter Dietary Restrictions"
@@ -36,30 +35,17 @@
         android:fontFamily="@font/kollektif"
         android:text="Chat Response"
         android:textColor="#A47464"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/generateButton" />
 
     <Button
-        android:id="@+id/recognitionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="320dp"
-        android:backgroundTint="#00FFFFFF"
-        android:fontFamily="@font/kollektif"
-        android:text="Speech Recognition"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/generateButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="70dp"
         android:layout_marginEnd="64dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="#EC742C"
@@ -130,4 +116,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chatOutput" />
+
+    <ImageView
+        android:id="@+id/speakButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="336dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="64dp"
+        android:background="#00EB742C"
+        android:foregroundTint="#E91E63"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_lock_silent_mode_off" />
 </androidx.constraintlayout.widget.ConstraintLayout>

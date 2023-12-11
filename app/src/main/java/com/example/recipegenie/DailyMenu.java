@@ -18,6 +18,7 @@ public class DailyMenu extends AppCompatActivity {
         Button BreakfastButton = findViewById(R.id.Breakfast);
         Button LunchtButton = findViewById(R.id.Lunch);
         Button DinnerButton = findViewById(R.id.Dinner);
+        Button GroceryStoreButton = findViewById(R.id.groceryStores);
 
         BreakfastButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +47,14 @@ public class DailyMenu extends AppCompatActivity {
                 Intent intent = new Intent(DailyMenu.this, MealPage.class);
                 String sendText = "Dinner";
                 intent.putExtra("CURR_MEAL_TEXT", sendText);
+                startActivity(intent);
+            }
+        });
+        GroceryStoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Handle button click
+                Intent intent = new Intent(DailyMenu.this, GroceryStores.class);
                 startActivity(intent);
             }
         });
